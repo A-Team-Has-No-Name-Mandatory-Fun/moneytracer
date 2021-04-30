@@ -17,21 +17,29 @@ public class User
     @Id
     private String id;
 
-    private String name;
+    private String username;
+    private String password;
 
     public static class Builder
     {
-        private String name;
         private String id;
+        private String username;
+        private String password;
 
         public User build()
         {
-            return new User(id, name);
+            return new User(id, username, password);
         }
 
-        public Builder withName(String name)
+        public Builder withUsername(String username)
         {
-            this.name = name;
+            this.username = username;
+            return this;
+        }
+
+        public Builder withPassword(String password)
+        {
+            this.password = password;
             return this;
         }
 

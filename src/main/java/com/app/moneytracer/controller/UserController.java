@@ -26,13 +26,14 @@ public class UserController
                 : new ResponseEntity<>("No users available", HttpStatus.NOT_FOUND);
     }
 
-    @PostMapping("/users")
-    public ResponseEntity<?> createUser(@RequestBody String name)
+    @PostMapping("/user")
+    public ResponseEntity<?> createUser(@RequestBody User u)
     {
         try
         {
             User user = new User.Builder()
-                    .withName(name)
+                    .withUsername(u.getUsername())
+                    .withPassword(u.getPassword())
                     .build();
             userRepository.save(user);
 
