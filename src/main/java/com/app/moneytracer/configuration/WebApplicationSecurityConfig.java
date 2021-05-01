@@ -20,6 +20,7 @@ public class WebApplicationSecurityConfig extends WebSecurityConfigurerAdapter
                 .csrf().disable()
                 .authorizeRequests().anyRequest().authenticated()
                 .and().httpBasic()
+                .and().logout().logoutUrl("/logout").logoutSuccessUrl("/")
                 .and().sessionManagement().disable();
     }
 
