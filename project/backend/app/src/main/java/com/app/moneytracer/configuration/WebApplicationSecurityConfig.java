@@ -18,8 +18,10 @@ public class WebApplicationSecurityConfig extends WebSecurityConfigurerAdapter
     {
         http
                 .csrf().disable()
+                .authorizeRequests().antMatchers("/signup").permitAll()
+                .and()
                 .authorizeRequests().anyRequest().authenticated()
-                .and().httpBasic()
+                .and().formLogin()
                 .and().logout().logoutUrl("/logout").logoutSuccessUrl("/")
                 .and().sessionManagement().disable();
     }
