@@ -19,16 +19,28 @@ public class User
 
     private String username;
     private String password;
+    private String firstName;
+    private String lastName;
+    private String email;
 
     public static class Builder
     {
         private String id;
         private String username;
         private String password;
+        private String firstName;
+        private String lastName;
+        private String email;
 
         public User build()
         {
-            return new User(id, username, password);
+            return new User(id, username, password, firstName, lastName, email);
+        }
+
+        public Builder withId(String id)
+        {
+            this.id = id;
+            return this;
         }
 
         public Builder withUsername(String username)
@@ -43,9 +55,21 @@ public class User
             return this;
         }
 
-        public Builder withId(String id)
+        public Builder withFirstName(String firstName)
         {
-            this.id = id;
+            this.firstName = firstName;
+            return this;
+        }
+
+        public Builder withLastName(String lastName)
+        {
+            this.lastName = lastName;
+            return this;
+        }
+
+        public Builder withEmail(String email)
+        {
+            this.email = email;
             return this;
         }
     }

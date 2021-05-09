@@ -19,7 +19,8 @@ public class UserController
     @Autowired
     private final PasswordConfig passwordConfig;
 
-    public UserController(UserRepository userRepository, PasswordConfig passwordConfig) {
+    public UserController(UserRepository userRepository, PasswordConfig passwordConfig)
+    {
         this.userRepository = userRepository;
         this.passwordConfig = passwordConfig;
     }
@@ -46,6 +47,9 @@ public class UserController
             User user = new User.Builder()
                     .withUsername(request.getUsername())
                     .withPassword(passwordConfig.passwordEncoder().encode(request.getPassword()))
+                    .withFirstName(request.getFirstName())
+                    .withLastName(request.getLastName())
+                    .withEmail(request.getEmail())
                     .build();
             userRepository.save(user);
 

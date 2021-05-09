@@ -21,9 +21,8 @@ public class WebApplicationSecurityConfig extends WebSecurityConfigurerAdapter
                 .authorizeRequests().antMatchers("/signup").permitAll()
                 .and()
                 .authorizeRequests().anyRequest().authenticated()
-                .and().formLogin()
-                .and().logout().logoutUrl("/logout").logoutSuccessUrl("/")
-                .and().sessionManagement().disable();
+                .and().formLogin().loginProcessingUrl("/login").permitAll()
+                .and().logout().logoutUrl("/logout").logoutSuccessUrl("/");
     }
 
     @Override
