@@ -1,18 +1,18 @@
-<template>
-    <div class="home">
-        <img alt="Vue logo" src="../assets/logo.png">
-        <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
-    </div>
+<template lang="pug">.
+    #home
+        signing
 </template>
 
 <script lang="ts" setup>
-    // import { defineComponent } from "vue"
-    import HelloWorld from "@/components/HelloWorld.vue" // @ is an alias to /src
-
-    // export default defineComponent({
-    // name: 'Home',
-    // components: {
-    //     HelloWorld,
-    // },
-    // });
+    // eslint-disable-next-line
+    import Signing from "@/components/signing/index.vue"
 </script>
+
+<style lang="stylus">
+#home
+    display flex
+    width 100%
+    height 100%
+    justify-content center
+    align-items center
+</style>

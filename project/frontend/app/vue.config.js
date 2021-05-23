@@ -10,19 +10,19 @@ module.exports =
         // proxy: '此处应为后端服务器地址',
     },
 
-    css:
-    {
-        loaderOptions:
-        {
-            stylus:
-            {
-                define:
-                {
-                    _colorset: path.resolve('src/assets/stylesheets/colorset/index.styl'),
-                },
-            },
-        },
-    },
+    // css:
+    // {
+        // loaderOptions:
+        // {
+        //     stylus:
+        //     {
+        //         define:
+        //         {
+        //             _colorset: path.resolve('src/assets/stylesheets/colorset/index.styl'),
+        //         },
+        //     },
+        // },
+    // },
 
     chainWebpack: config => {
         // pug loader //
